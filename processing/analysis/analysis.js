@@ -212,7 +212,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
         request({
           method: 'POST',
           url: 'https://gateway.watsonplatform.net/visual-recognition/api/v3/detect_faces' + // eslint-disable-line
-            '?api_key=' + args.watsonApiKey +
+            '?api_key=' + args.watsonApiKey + "DefaultCustomModel_1626596963" +
             '&version=2018-03-19',
           auth: {
             user: 'apikey',
@@ -242,7 +242,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
         request({
           method: 'POST',
           url: 'https://gateway.watsonplatform.net/visual-recognition/api/v3/classify' + // eslint-disable-line
-            '?api_key=' + args.watsonApiKey +
+            '?api_key=' + args.watsonApiKey + "DefaultCustomModel_1626596963" +
             '&version=2018-03-19',
           auth: {
             user: 'apikey',
