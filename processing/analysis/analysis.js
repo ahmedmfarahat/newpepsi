@@ -211,10 +211,10 @@ function analyzeImage(args, fileName, analyzeCallback) {
       fs.createReadStream(fileName).pipe(
         request({
           method: 'POST',
-           url: 'https://gateway.watsonplatform.net/visual-recognition/api/v3/detect_faces' + // eslint-disable-line
-           '?api_key=' + args.watsonApiKey +
-           '&classifier_ids=detect_faces' +
-           '&version=2018-03-19',
+           url: 'https://gateway.watsonplatform.net/visual-recognition/api/v3/classify' + // eslint-disable-line
+                     '?api_key=' + args.watsonApiKey +
+                      '&classifier_ids=DefaultCustomModel_1626596963,default' + 
+                      '&version=2018-03-19', 
           auth: {
             user: 'apikey',
             pass: args.watsonApiKey,
@@ -245,7 +245,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
           url: 'https://gateway.watsonplatform.net/visual-recognition/api/v3/classify' + // eslint-disable-line
            '?api_key=' + args.watsonApiKey +
            '&classifier_ids=DefaultCustomModel_1626596963,default' +
-           '&version=2018-03-19',
+'&version=2018-03-19',
           auth: {
             user: 'apikey',
             pass: args.watsonApiKey,
@@ -258,7 +258,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
           if (err) {
             console.log('Image Keywords', err);
           } else if (body.images && body.images.length > 0) {
-            analysis.image_keywords = body.images[0].classifiers[0].classes && analysis.image_keywords = body.images[0].classifiers[1].classes;
+            analysis.image_keywords = body.images[0].classifiers[0].classes;
           }
           callback(null);
         }));
