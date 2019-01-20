@@ -261,10 +261,9 @@ function analyzeImage(args, fileName, analyzeCallback) {
            // analysis.image_keywords= [];
             //analysis.image_keywords.push(body.images[0].classifiers[0].classes);
             //analysis.image_keywords.push(body.images[0].classifiers[1].classes);
-            for(int i=0; i<2; i++){
-            analysis.image_keywords= body.images[0].classifiers[i].classes;
-            }
-            console.log(analysis.image_keywords);
+              analysis.image_keywords=body.images[0].classifiers[0].classes + body.images[0].classifiers[1].classes;
+           
+            //console.log(analysis.image_keywords);
           }
           callback(null);
         }));
