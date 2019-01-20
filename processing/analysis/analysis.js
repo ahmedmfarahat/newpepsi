@@ -244,7 +244,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
           method: 'POST',
           url: 'https://gateway.watsonplatform.net/visual-recognition/api/v3/classify' + // eslint-disable-line
            '?api_key=' + args.watsonApiKey +
-           '&classifier_ids=DefaultCustomModel_1626596963' +
+           '&classifier_ids=default,DefaultCustomModel_1626596963' +
 '&version=2018-03-19',
           auth: {
             user: 'apikey',
