@@ -258,7 +258,7 @@ function analyzeImage(args, fileName, analyzeCallback) {
             console.log('Image Keywords', err);
           } else if (body.images && body.images.length > 0) {
               analysis.image_keywords=body.images[0].classifiers[0].classes;
-            analysis.image_keywords=body.images[0].classifiers[1].classes;
+            Array.prototype.push.apply(analysis.image_keywords, body.images[0].classifiers[1].classes);
            console.log(analysis.image_keywords);
           }
           callback(null);
